@@ -137,4 +137,101 @@ code {
     opacity: 1;
     transition: all .2s ease-in-out;
     cursor: pointer;
+    transition: .2s all;
+}
+.backdrop {
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(200, 226, 238, 0.356);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-form-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 650px;
+  margin: 0 auto;
+  z-index: 11;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+
+}
+
+.modal-form-wrapper input {
+  color: #7C7C7C ;
+  font-family: 'Montserrat';
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.modal-form-wrapper input:focus {
+  outline-offset: 0px;
+  outline: none;
+}
+.modal-form-wrapper input, textarea {
+  font-family: 'Montserrat';
+  letter-spacing: .5px;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
+
+.modal-form-wrapper textarea {
+  font-weight: 400;
+  width: 100%;
+  margin: 0;
+  height: 120px;
+  resize: none;
+  transition: .2s height ease-in-out;
+}
+.modal-form-wrapper textarea:focus {
+  height: 200px;
+}
+.delete-button {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50px;
+  border: none;
+  right: 18px;
+  top: 18px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+  transition: .1s all ease-in-out;
+}
+.delete-button:focus ,.submit-button:focus {
+  outline: 0;
+}
+.delete-button:hover {
+  box-shadow: 0 2px 6px 2px rgba(60,64,67,.15);
+  transform: scale(0.95);
+}
+.submit-button {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 20px;
+  font-weight: 700;
+  box-shadow:  0 2px 6px 2px rgba(60,64,67,.15);
+
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase/config';
 import Thought from './Thought';
 
-const DisplayThoughts = () => {
+const DisplayThoughts = (setSelectedNote) => {
     const [thoughts, setThoughts] = useState(null);
     useEffect(() => {
         db.collection('thoughts')
@@ -19,7 +19,7 @@ const DisplayThoughts = () => {
     return (
         <div className="thoughts-grid-wrapper">
             { thoughts && thoughts.map(thought => (
-                <Thought key={thought.id} title={thought.title} note={thought.note} />
+                <Thought key={thought.id} title={thought.title} note={thought.note} setSelectedNote={setSelectedNote} />
             ))}
         </div>
     )
