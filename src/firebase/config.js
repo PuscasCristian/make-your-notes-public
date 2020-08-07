@@ -1,7 +1,7 @@
 import * as firebase from 'firebase'
 import 'firebase/firestore';
 
-firebase.initializeApp({
+const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyCL7zV5tDlEZ2UFdEBcijIFac9tdlcO6FU",
     authDomain: "public-thoughts-75d3e.firebaseapp.com",
     databaseURL: "https://public-thoughts-75d3e.firebaseio.com",
@@ -14,6 +14,6 @@ firebase.initializeApp({
 
 firebase.analytics();
 
-const projectFirestore = firebase.firestore();
-const timestamp = firebase.firestore.FieldValue.serverTimestamp;
-export { projectFirestore, timestamp }
+const db = firebaseApp.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+export { db, timestamp }

@@ -115,7 +115,7 @@ code {
   position: relative;
   margin: 60px auto;
 }
-.though-wrapepr {
+.thought-wrapper {
   position: relative;
   padding: 20px;
   background-color: #fff;
@@ -124,4 +124,17 @@ code {
   overflow-wrap: break-word;
   max-height: 260px;
   overflow-y: auto;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.2), 0 2px 6px 2px rgba(60,64,67,.1);
+}
+.thought-wrapper h4 {
+  margin-bottom: 15px;
+}
+.thought-wrapper svg {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 25px;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
 }
