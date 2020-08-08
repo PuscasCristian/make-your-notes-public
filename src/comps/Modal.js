@@ -1,10 +1,16 @@
-import React from 'react'
-import {db} from '../firebase/config';
+import React, { useState } from 'react'
 
 const Modal = () => {
-    
+    const handleClosingModal = (e) => {
+        if(e.target.classList.contains('backdrop')){
+            sessionStorage.setItem('modalVisibility', JSON.stringify(false))
+            sessionStorage.clear();
+        }
+
+    }
+
     return (
-        <div className="backdrop">
+        <div className="backdrop" onClick={handleClosingModal}>
             <form className="modal-form-wrapper">
                 <input placeholder="title" />
                 <textarea placeholder="get value"/>

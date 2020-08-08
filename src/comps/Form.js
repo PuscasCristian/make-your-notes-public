@@ -5,8 +5,6 @@ import { db, timestamp } from '../firebase/config';
 const Form = () => {
     const [inputTitle, setInputTitle] = useState('');
     const [inputNote, setInputNote] = useState('');
-    console.log(inputNote);
-    console.log(inputTitle);
     const handleSubmit = (e) => {
         e.preventDefault();
         db.collection('thoughts').add({

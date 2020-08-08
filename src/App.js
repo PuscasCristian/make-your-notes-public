@@ -1,18 +1,18 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import Header from './comps/Header';
 import Form from './comps/Form';
 import DisplayThoughts from './comps/DisplayThoughts'
 import Modal from './comps/Modal';
 
 function App() {
-  const [selectedNote, setSelectedNote] = useState();
-  console.log(selectedNote);
+  const [modalData, setModalData] = useState(null);  
+
   return (
     <div className="App">
       <Header />
       <Form />
-      <DisplayThoughts setSelectedNote={setSelectedNote}/>
-      { selectedNote && <Modal selectedNote={selectedNote} setSelectedNote={setSelectedNote} />}
+      <DisplayThoughts ModelDataProp={setModalData}/>
+      {/* { modalVisibility && <Modal modalData={modalData} />} */}
     </div>
   );
 }
