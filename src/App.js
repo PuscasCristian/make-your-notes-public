@@ -5,14 +5,14 @@ import DisplayThoughts from './comps/DisplayThoughts'
 import Modal from './comps/Modal';
 
 function App() {
+  const [modalVisibility, setModalVisibility] = useState(null);
   const [modalData, setModalData] = useState(null);  
-
   return (
     <div className="App">
       <Header />
       <Form />
-      <DisplayThoughts ModelDataProp={setModalData}/>
-      {/* { modalVisibility && <Modal modalData={modalData} />} */}
+      <DisplayThoughts ModelDataProp={setModalData} modalData={modalData} ModalVisibility={setModalVisibility}/>
+      { modalVisibility && <Modal modalData={modalData} ModalVisibility={setModalVisibility}/>}
     </div>
   );
 }

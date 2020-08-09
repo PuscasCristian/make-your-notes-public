@@ -106,7 +106,12 @@ code {
 .form-wrapper button:focus {
   outline: none;
 }
-
+.error {
+  font-weight: 400;
+  color: rgb(158, 94, 42);
+  text-align: center;
+  margin: 15px 0;
+}
 .thoughts-grid-wrapper {
   width: 1440px;
   display: grid;

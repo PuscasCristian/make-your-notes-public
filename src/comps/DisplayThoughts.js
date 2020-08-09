@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase/config';
 import Thought from './Thought';
 
-const DisplayThoughts = (ModelDataProp) => {
+const DisplayThoughts = ({ModelDataProp, ModalVisibility}) => {
     const [thoughts, setThoughts] = useState(null);
-    const [setModelDataProp,]
-    const retrieveData = () => {
-
-    }
+    
+    
 
     useEffect(() => {
         db.collection('thoughts')
@@ -24,7 +22,7 @@ const DisplayThoughts = (ModelDataProp) => {
     return (
         <div className="thoughts-grid-wrapper">
             { thoughts && thoughts.map(thought => (
-                <Thought key={thought.id} title={thought.title} note={thought.note}/>
+                <Thought key={thought.id} selector={thought.id} title={thought.title} note={thought.note} communicateData={ModelDataProp} clicked={ModalVisibility}/>
             ))}
         </div>
     )
