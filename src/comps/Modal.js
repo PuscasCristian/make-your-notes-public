@@ -20,25 +20,26 @@ const Modal = ({ModalVisibility, modalData }) => {
     const handleEdit = (e) => {
         e.preventDefault();
         if(!editedInputNote.length < 1 ) {
-            db.collection('thought').doc(modalData[2]).update({
+            db.collection('thoughts').doc(selector).update({
                 title: editedInputTitle,
                 note: editedInputNote,
             });
+            ModalVisibility(false);
         } else {
             alert('Blank notes should be deleted. Please delete the note or add some thoughts in it. 💭');
         }
     }
     useEffect(() => {
         setEditedInputTitle(modalData[0]);
-        setEditedInputTitle(modalData[1]);
+        setEditedInputNote(modalData[1]);
         setSelector(modalData[2]);
     },[modalData]);
 
     return (
         <div className="backdrop" onClick={handleClosingModal}>
             <form className="modal-form-wrapper">
-                <input placeholder="Title" defaultValue={editedInputTitle} onChange={e => setEditedInputTitle(e.target.value)}/>
-                <textarea defaultValue={editedInputTitle} onChange={e => setEditedInputNote(e.target.value)}/>
+                <input placeholder="Title" defaultValue={modalData[0]} onChange={e => setEditedInputTitle(e.target.value)}/>
+                <textarea defaultValue={modalData[1]} onChange={e => setEditedInputNote(e.target.value)} on/>
                 <button type="submit" onClick={handleEdit} className="submit-button">
                     <span>Done</span>
                 </button>

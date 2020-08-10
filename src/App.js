@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import Header from './comps/Header';
 import Form from './comps/Form';
 import DisplayThoughts from './comps/DisplayThoughts'

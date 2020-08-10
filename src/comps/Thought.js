@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 
 const Thought = ({ title, note, communicateData, clicked, selector }) => {
     const [visibility, setVisibility] = useState(false);
     
     const handleModal = () => {
         clicked(true);
-        communicateData([title,note, selector]);
+        communicateData([title,note,selector]);
     }
     return (
         <div className="thought-wrapper" onMouseEnter={() => setVisibility(true) } onMouseLeave={() => setVisibility(false)} >
